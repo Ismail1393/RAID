@@ -70,7 +70,6 @@ int main() {
 void raid0(int query) {
     // Implement RAID 0
     int hardDiskNumber = (query / numChunks) % numDisks ;
-    // int stripeNumber = (query % numChunks) + (((query / (numChunks * numDisks)) % (numChunks * numDisks)) * numChunks);
     int stripeNumber = (query % numChunks) + ((query / (numChunks * numDisks)) * numChunks);
 
     printf("%d %d\n", hardDiskNumber, stripeNumber);
